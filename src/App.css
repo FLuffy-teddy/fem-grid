@@ -1,0 +1,180 @@
+:root {
+  --dull-purple: #dacffc;
+  --bright-purple: #7650dc;
+  --dull-yellow: #f9eee1;
+  --bright-yellow: #ffcb6b;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+.App {
+  display: grid;
+  justify-content: center;
+  gap: 1.5em;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  height: 100vh;
+  background: rgba(253, 242, 242, 0.99);
+}
+.App div {
+  border-radius: 0.5em;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.App div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.App div h2 {
+  margin: 0px;
+  padding-bottom: 0.5em;
+}
+
+.App-create {
+  background: var(--dull-yellow);
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.App-create h2 span {
+  color: var(--bright-purple);
+}
+
+.App-stars {
+  background: var(--bright-purple);
+  color: white;
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  text-align: center;
+}
+.App .App-stars img {
+  max-height: 24px;
+}
+.App-stars h2 {
+  font-size: 2.5em;
+}
+.App-stars h2 span:nth-of-type(1) {
+  color: var(--bright-yellow);
+}
+.App-stars h2 span:nth-of-type(2) {
+  font-style: italic;
+}
+
+.App-schedule {
+  background: var(--dull-purple);
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 4 / span 4;
+  grid-column-start: 5;
+  grid-row-start: 2;
+}
+
+.App .App-schedule img {
+  max-width: unset;
+  max-height: 50%;
+}
+
+.App-content {
+  background: var(--bright-yellow);
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.App-manage {
+  background: white;
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.App-consistent {
+  background: var(--bright-yellow);
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 4;
+}
+
+.App-growth {
+  background: white;
+  color: black;
+  grid-column: span 1 / span 1;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 6;
+}
+.App-growth h2 {
+  font-size: 2.5em;
+}
+
+.App-followers {
+  display: flex;
+  align-items: center;
+  background: var(--bright-purple);
+  color: white;
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 6;
+}
+
+@media (max-width: 1216px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    height: unset;
+  }
+  .App div {
+    grid-row: unset;
+    grid-column: unset;
+    overflow: unset;
+    text-align: center;
+  }
+  .App div img {
+    max-height: 365px;
+  }
+  .App .App-schedule img {
+    max-height: 365px;
+  }
+  .App .App-followers {
+    flex-direction: column;
+    gap: 2em;
+  }
+  .App-stars {
+    order: 1;
+  }
+  .App-manage {
+    order: 2;
+  }
+  .App-consistent {
+    order: 3;
+  }
+  .App-schedule {
+    order: 4;
+  }
+  .App-followers {
+    order: 5;
+  }
+  .App-growth {
+    order: 6;
+  }
+  .App-create {
+    order: 7;
+  }
+  .App-content {
+    order: 8;
+  }
+}
